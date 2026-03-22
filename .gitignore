@@ -1,4 +1,4 @@
-wp-config.php
+wp-config.php # branch A
 wp-content/uploads/
 node_modules/
 .env
