@@ -5,8 +5,12 @@ services:
       - "80:80"
     volumes:
       - ./html:/var/www/html
+    environment:
+      WORDPRESS_SMTP_HOST: mailhog
+      WORDPRESS_SMTP_PORT: 1025
     depends_on:
       - db
+      - mailhog
 
   db:
     image: mariadb:10.11
@@ -18,5 +22,10 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+    
 volumes:
   db_data:
