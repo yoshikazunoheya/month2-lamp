@@ -1,4 +1,4 @@
-wp-config.php
+wp-config.php # main
 wp-content/uploads/
 node_modules/
 .env
